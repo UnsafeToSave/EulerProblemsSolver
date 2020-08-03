@@ -24,7 +24,7 @@ namespace ProblemsSolver.Problems
 
         public void Solution()
         {
-            int idPrime = 0;           //Id of prime number in sequence of prime numbers
+            int idPrime = 1;           //Id of prime number in sequence of prime numbers
             long prevNumber = number;  //Variable reciving value of _number to each iterration
             while (!number.IsPrime())
             {
@@ -33,7 +33,7 @@ namespace ProblemsSolver.Problems
                 if(prevNumber != number)
                 {
                     prevNumber = number;
-                    idPrime = 0;
+                    idPrime = 1;
                 }
             }
             largestFactor = number;

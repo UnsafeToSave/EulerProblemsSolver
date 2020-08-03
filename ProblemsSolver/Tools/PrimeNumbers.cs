@@ -92,7 +92,9 @@ namespace ProblemsSolver.Tools
         /// </summary>
         public static async Task<long> AsyncGetElementAt(int index)
         {
-            if(numbers.Count() > index)
+            --index; // The first element of sequence has index 0, for that we use decrement for index
+
+            if (numbers.Count() > index)
                 return numbers.ElementAt(index);
             else
             {
@@ -109,6 +111,8 @@ namespace ProblemsSolver.Tools
         /// </summary>
         public static long GetElementAt(int index)
         {
+            --index; //The first element of sequence has index 0, for that we use decrement for index
+ 
             if (numbers.Count() > index)
                 return numbers.ElementAt(index);
             else

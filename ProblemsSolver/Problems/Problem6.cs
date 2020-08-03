@@ -9,8 +9,8 @@
     //Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
     public class Problem6 : IProblem<long>
     {
-        int amountNumbers;
-        long difference;
+        int amountNumbers; // Amount numbers of sequence  
+        long difference;   // Difference between sum of squares and square of sum
 
         public Problem6(int amount)
         {
@@ -24,17 +24,17 @@
 
         public void Solution()
         {
-            long sumOfSquer = 0;
-            long squerOfSum = 0;
+            long sumOfSquares = 0; // Variable containing sum of squares
+            long squareOfSum = 0;   // Variable containing square of sum
 
             for (int i = 1; i <= amountNumbers; i++)
             {
-                sumOfSquer += i * i;
+                sumOfSquares += i * i;
             }
 
-            squerOfSum = (amountNumbers * amountNumbers + amountNumbers) / 2;
-            squerOfSum = squerOfSum * squerOfSum;
-            difference = squerOfSum - sumOfSquer;
+            squareOfSum = (amountNumbers * amountNumbers + amountNumbers) / 2;
+            squareOfSum = squareOfSum * squareOfSum;
+            difference = squareOfSum - sumOfSquares;
         }
     }
 }
