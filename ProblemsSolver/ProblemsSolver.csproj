@@ -50,6 +50,7 @@
     <Compile Include="Problems\Problem6.cs" />
     <Compile Include="Problems\Problem7.cs" />
     <Compile Include="Problems\Problem8.cs" />
+    <Compile Include="Problems\Problem9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Factorials.cs" />
     <Compile Include="Tools\Palindromes.cs" />

@@ -17,6 +17,8 @@ namespace EulerProblemsSolver
     {
         static async Task Main(string[] args)
         {
+            await PrimeNumbers.SearchBelow(2000000);
+            var r = PrimeNumbers.numbers.Where(x => x < 2000000).Sum();
         }
     }
 }

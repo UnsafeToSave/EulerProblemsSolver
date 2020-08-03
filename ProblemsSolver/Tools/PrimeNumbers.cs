@@ -9,7 +9,7 @@ namespace ProblemsSolver.Tools
     /// </summary>
     public static class PrimeNumbers
     {
-        static List<long> numbers = new List<long>(); //List of prime numbers
+        public static List<long> numbers = new List<long>(); //List of prime numbers
 
         const int firstNumber = 2; //Constant for moving step by step through even numbers
         static int mult = 0;       //Multiplier for moving
