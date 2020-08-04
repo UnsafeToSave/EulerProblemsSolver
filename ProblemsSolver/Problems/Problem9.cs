@@ -11,11 +11,12 @@
     // Find the product abc.
     public class Problem9 : IProblem<int>
     {
-        int product;
+        int product = 0; //Variable containing product of a,b,c
+        int sum;         //Variable containing sum of a,b,c
 
-        public Problem9(int sum)
+        public Problem9(int tripletSum)
         {
-
+            sum = tripletSum;
         }
 
         public int GetResult()
@@ -25,7 +26,37 @@
 
         public void Solution()
         {
-            throw new System.NotImplementedException();
+            int a, b, c; //Elements of Pythagorean triplet
+
+            a = sum / 3;
+            b = sum / 3;
+            c = sum / 3 + sum % 3;
+
+            while (a >= 1)
+            {
+                if(c*c < b*b + a * a)
+                {
+                    if (a >= b)
+                    {
+                        a--;
+                        b++;
+                    }
+                    b--;
+                    c++;
+                }
+                else
+                {
+                    a--;
+                    b++;
+                }
+
+                if (c * c == b * b + a * a)
+                {
+                    product = c * b * a;
+                    break;
+                }
+            }
+
         }
     }
 }
