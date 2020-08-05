@@ -9,7 +9,7 @@ namespace ProblemsSolver.Tools
     /// </summary>
     public static class PrimeNumbers
     {
-        public static List<long> numbers = new List<long>(); //List of prime numbers
+        static List<long> numbers = new List<long>(); //List of prime numbers
 
         const int firstNumber = 2; //Constant for moving step by step through even numbers
         static int mult = 0;       //Multiplier for moving
@@ -24,7 +24,7 @@ namespace ProblemsSolver.Tools
         }
 
         /// <summary>
-        /// Method  to Searching next two member sequince of prime numbers 
+        /// Method to searching next two member sequince of prime numbers 
         /// </summary>
         static void SearchNext()
         {
@@ -40,31 +40,27 @@ namespace ProblemsSolver.Tools
         }
 
         /// <summary>
-        /// Method for searching all members, that below boundler
+        /// Method to searching all members, that below boundler
         /// </summary>
         /// <param name="boundler">limit of sequence</param>
-        public static async Task SearchBelow(int boundler)
+        public static void SearchBelow(int boundler)
         {
             while(numbers.Last() < boundler)
             {
-                await Task.Run(() => SearchNext());
+                SearchNext();
             }
         }
 
         /// <summary>
-        /// Method for defining is number prime or not-prime
+        /// Method to defining is number prime or not-prime
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">some number</param>
         /// <returns>Returns true if number is prime and false if not-prime</returns>
         public static bool IsPrime(this long number)
         {
             int idPrime = 0;
             long divider;
 
-            if (numbers.Contains(number))
-            {
-                return true;
-            }
 
             divider = number / numbers[idPrime];
             while(numbers[idPrime] <= divider)
@@ -88,7 +84,7 @@ namespace ProblemsSolver.Tools
         }
 
         /// <summary>
-        /// Async method for getting concrete element of sequence of prime numbers
+        /// Async method to getting concrete element of sequence of prime numbers
         /// </summary>
         public static async Task<long> AsyncGetElementAt(int index)
         {
@@ -107,7 +103,7 @@ namespace ProblemsSolver.Tools
         }
 
         /// <summary>
-        /// Method for getting concrete element of sequence of prime numbers
+        /// Method to getting concrete element of sequence of prime numbers
         /// </summary>
         public static long GetElementAt(int index)
         {
@@ -123,6 +119,15 @@ namespace ProblemsSolver.Tools
                 }
                 return numbers.ElementAt(index);
             }
+        }
+
+        /// <summary>
+        /// Method to getting sequence of finded prime numbers
+        /// </summary>
+        /// <returns>Returns sequince prime numbers</returns>
+        public static List<long> GetSequence()
+        {
+            return numbers;
         }
 
     }
